@@ -12,11 +12,5 @@ public class CrudServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CrudServiceApplication.class, args);
 	}
-  @GetMapping(path = "/")
-	public List <String> getNames(){
-		return  List.of(
-				"NAME",
-				"NAME"
-		);
-  }
+
 }

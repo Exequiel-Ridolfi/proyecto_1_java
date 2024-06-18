@@ -2,6 +2,11 @@ package com.ucc.crudservice.controller;
 
 import com.ucc.crudservice.model.Product;
 import com.ucc.crudservice.service.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lombok.*;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -36,12 +41,14 @@ public class ProductController {
         }
         return this.productService.addProduct(product);
   }
+
     // metodo para borrar un producto
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
     public  ResponseEntity<Object>  deleteProduct(@PathVariable("id") Long id){
          return  this.productService.deleteProduct(id);
     }
+
     // metodo para modificar un producto
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
